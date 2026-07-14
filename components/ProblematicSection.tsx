@@ -165,6 +165,74 @@ export default function ProblematicSection() {
           </div>
         </div>
 
+        {/* Secure Channel Diagram */}
+        <div className="mb-20">
+          <div className="card-premium rounded-3xl p-8 lg:p-12 border border-blue-100/50 relative overflow-hidden bg-white/50 backdrop-blur-sm">
+            {/* Background elements */}
+            <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] opacity-30" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-32 bg-gradient-to-r from-transparent via-teal-100/40 to-transparent blur-2xl" />
+            
+            <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
+              
+              {/* Hotel (Right side in RTL) */}
+              <div className="flex flex-col items-center z-10 w-full md:w-1/4">
+                <div className="w-24 h-24 rounded-2xl bg-gradient-to-br from-[#c9a227] to-[#9a7b1b] flex items-center justify-center shadow-lg shadow-[#c9a227]/20 mb-4 transform transition-transform hover:scale-105 duration-300 border-4 border-white">
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
+                    <path d="M3 21h18M5 21V7a2 2 0 012-2h10a2 2 0 012 2v14M9 9h6M9 13h6M9 17h6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <h4 className="text-xl font-bold text-[#0a1628]">الفندق</h4>
+                <span className="text-sm text-gray-500 font-medium">نقطة التسجيل</span>
+              </div>
+
+              {/* Secure Channel (Middle) */}
+              <div className="flex-1 flex flex-col items-center justify-center relative w-full my-12 md:my-0">
+                <div className="w-full relative flex items-center justify-center">
+                  {/* The connection line */}
+                  <div className="absolute w-full h-1.5 bg-gray-100 rounded-full overflow-hidden">
+                    <div className="h-full bg-gradient-to-r from-[#1a3a6b] via-teal-400 to-[#c9a227] w-full animate-pulse opacity-70"></div>
+                  </div>
+                  
+                  {/* Animated data packets */}
+                  <div className="absolute w-full flex justify-between px-8">
+                    {[1, 2, 3].map((i) => (
+                      <div key={i} className={`w-3 h-3 bg-teal-500 rounded-full shadow-[0_0_10px_rgba(20,184,166,0.8)] animate-bounce`} style={{ animationDelay: `${i * 150}ms` }}></div>
+                    ))}
+                  </div>
+
+                  {/* Central badge */}
+                  <div className="bg-white px-8 py-4 rounded-2xl shadow-xl shadow-teal-900/5 border border-teal-100 flex flex-col items-center gap-2 z-10 transform -translate-y-1">
+                    <div className="flex items-center gap-2 text-teal-600 mb-1">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        <path d="M9 12l2 2 4-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                      <span className="font-bold text-lg">قناة آمنة ومشفّرة</span>
+                    </div>
+                    <div className="flex gap-2">
+                      <span className="bg-slate-100 text-slate-700 px-3 py-1 rounded-md text-xs font-bold">معلومات النزيل</span>
+                      <span className="bg-slate-100 text-slate-700 px-3 py-1 rounded-md text-xs font-bold hidden sm:inline-block">بيانات الهوية</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Police Station (Left side in RTL) */}
+              <div className="flex flex-col items-center z-10 w-full md:w-1/4">
+                <div className="w-24 h-24 rounded-2xl bg-gradient-to-br from-[#1a3a6b] to-[#0a2040] flex items-center justify-center shadow-lg shadow-blue-900/20 mb-4 transform transition-transform hover:scale-105 duration-300 border-4 border-white">
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M12 8v4M12 16h.01" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <h4 className="text-xl font-bold text-[#0a1628]">الجهات الأمنية</h4>
+                <span className="text-sm text-gray-500 font-medium">مركز الشرطة</span>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+
         {/* Verification */}
         <div className="mb-20">
           <div className="mb-8">
@@ -254,7 +322,7 @@ export default function ProblematicSection() {
         </div>
 
         {/* Conclusion */}
-        <div className="card-premium rounded-3xl p-10 border-r-4 border-[#c9a227]">
+        <div className="card-premium rounded-3xl p-10 border-r-4 border-[#c9a227] mb-20">
           <span className="section-label">الاستنتاج</span>
           <p className="text-[#0a1628] font-bold text-xl leading-relaxed max-w-4xl mt-4">
             المشكلة ليست في غياب برنامج لتسيير الفنادق فقط، بل في{" "}
@@ -263,6 +331,118 @@ export default function ProblematicSection() {
             والذكاء الاصطناعي لتحسين الإدارة، ودعم الاستثمار، وتطوير تجربة
             السائح، والمساهمة في تسريع التحول الرقمي للقطاع.
           </p>
+        </div>
+
+        {/* National Unified Digital System Diagram */}
+        <div className="mb-8">
+          <div className="text-center mb-12">
+            <span className="section-label">الحل المقترح</span>
+            <h3 className="text-3xl font-black text-[#0a1628] mt-3">
+              منظومة رقمية وطنية موحدة
+            </h3>
+            <div className="divider-gold mx-auto mt-3" />
+            <p className="text-gray-500 mt-4 text-sm">
+              منصة مركزية تربط جميع الفاعلين في قطاع الإيواء والسياحة
+            </p>
+          </div>
+
+          {/* Hub Diagram */}
+          <div className="relative py-8">
+            {/* Outer glow background */}
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-50/60 via-transparent to-amber-50/40 rounded-3xl" />
+
+            <div className="relative grid grid-cols-3 gap-4 items-center max-w-4xl mx-auto px-4">
+
+              {/* LEFT column — actors */}
+              <div className="flex flex-col gap-6">
+                {[
+                  { label: "السائح", sub: "حجز • تخطيط", color: "from-blue-500 to-blue-700", icon: "M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2M12 11a4 4 0 100-8 4 4 0 000 8z" },
+                  { label: "الفنادق", sub: "تسيير • إيواء", color: "from-[#c9a227] to-[#9a7b1b]", icon: "M3 21h18M5 21V7a2 2 0 012-2h10a2 2 0 012 2v14M9 9h6M9 13h6" },
+                  { label: "المرشدون", sub: "ربط • خدمات", color: "from-teal-500 to-teal-700", icon: "M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM2 12h20M12 2a15.3 15.3 0 010 20" },
+                ].map((actor, i) => (
+                  <div key={i} className="relative flex items-center gap-3 group">
+                    <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${actor.color} flex items-center justify-center shadow-md flex-shrink-0 transition-transform duration-300 group-hover:scale-110`}>
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                        <path d={actor.icon} stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </div>
+                    <div>
+                      <p className="font-bold text-[#0a1628] text-sm">{actor.label}</p>
+                      <p className="text-gray-400 text-xs">{actor.sub}</p>
+                    </div>
+                    {/* Connector line to center */}
+                    <div className="absolute left-full top-1/2 -translate-y-1/2 w-6 h-[2px] bg-gradient-to-r from-gray-300 to-transparent" />
+                  </div>
+                ))}
+              </div>
+
+              {/* CENTER — Hub */}
+              <div className="flex flex-col items-center justify-center">
+                {/* Pulsing rings */}
+                <div className="relative flex items-center justify-center">
+                  <div className="absolute w-40 h-40 rounded-full border-2 border-[#1a3a6b]/10 animate-ping" style={{ animationDuration: "3s" }} />
+                  <div className="absolute w-32 h-32 rounded-full border-2 border-[#1a3a6b]/15 animate-ping" style={{ animationDuration: "2.3s", animationDelay: "0.5s" }} />
+                  {/* Hub circle */}
+                  <div className="w-28 h-28 rounded-full bg-gradient-to-br from-[#0a2040] to-[#1a3a6b] flex flex-col items-center justify-center shadow-2xl shadow-[#1a3a6b]/30 border-4 border-white z-10 cursor-default select-none">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" className="mb-1">
+                      <circle cx="12" cy="12" r="3" stroke="#f0c040" strokeWidth="2"/>
+                      <path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.93 4.93l2.12 2.12M16.95 16.95l2.12 2.12M4.93 19.07l2.12-2.12M16.95 7.05l2.12-2.12" stroke="#f0c040" strokeWidth="2" strokeLinecap="round"/>
+                    </svg>
+                    <span className="text-white text-[10px] font-bold text-center leading-tight px-2">منظومة<br/>موحدة</span>
+                  </div>
+                </div>
+
+                {/* Vertical connectors top & bottom hint */}
+                <div className="flex flex-col items-center gap-1 mt-2">
+                  <div className="w-[2px] h-4 bg-gradient-to-b from-gray-300 to-transparent"/>
+                </div>
+              </div>
+
+              {/* RIGHT column — institutions */}
+              <div className="flex flex-col gap-6">
+                {[
+                  { label: "الجهات الأمنية", sub: "بيانات النزلاء", color: "from-slate-600 to-slate-800", icon: "M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" },
+                  { label: "وزارة السياحة", sub: "إحصائيات • قرارات", color: "from-purple-600 to-purple-800", icon: "M3 3h18v18H3zM3 9h18M3 15h18M9 3v18M15 3v18" },
+                  { label: "المستثمرون", sub: "تحليلات • فرص", color: "from-amber-500 to-amber-700", icon: "M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" },
+                ].map((actor, i) => (
+                  <div key={i} className="relative flex items-center gap-3 flex-row-reverse group">
+                    <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${actor.color} flex items-center justify-center shadow-md flex-shrink-0 transition-transform duration-300 group-hover:scale-110`}>
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                        <path d={actor.icon} stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </div>
+                    <div className="text-right">
+                      <p className="font-bold text-[#0a1628] text-sm">{actor.label}</p>
+                      <p className="text-gray-400 text-xs">{actor.sub}</p>
+                    </div>
+                    {/* Connector line to center */}
+                    <div className="absolute right-full top-1/2 -translate-y-1/2 w-6 h-[2px] bg-gradient-to-l from-gray-300 to-transparent" />
+                  </div>
+                ))}
+              </div>
+
+            </div>
+
+            {/* Bottom row — AI & Data label */}
+            <div className="flex justify-center mt-10">
+              <div className="flex items-center gap-3 bg-white border border-[#c9a227]/30 rounded-2xl px-6 py-3 shadow-md shadow-amber-100">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                  <path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18" stroke="#c9a227" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+                <span className="text-[#0a1628] font-bold text-sm">بيانات مركزية</span>
+                <div className="w-px h-5 bg-gray-200"/>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                  <path d="M12 2a10 10 0 110 20A10 10 0 0112 2zm0 0v20M2 12h20" stroke="#1a3a6b" strokeWidth="2" strokeLinecap="round"/>
+                </svg>
+                <span className="text-[#0a1628] font-bold text-sm">ذكاء اصطناعي</span>
+                <div className="w-px h-5 bg-gray-200"/>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10zM9 12l2 2 4-4" stroke="#0d9488" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+                <span className="text-[#0a1628] font-bold text-sm">قناة آمنة</span>
+              </div>
+            </div>
+          </div>
         </div>
 
       </div>
