@@ -138,9 +138,9 @@ export default function ResultsSection() {
         <div className="grid sm:grid-cols-3 gap-6 mb-12">
           {[
             {
-              value: "15",
-              label: "نتيجة مباشرة منتظرة",
-              sublabel: "من تطبيق المنصة",
+              value: "10",
+              label: "فنادق زبائن راضون عنا",
+              sublabel: "ومؤمنون بنا",
               color: "from-[#c9a227] to-[#f0c040]",
             },
             {

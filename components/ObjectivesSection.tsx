@@ -210,17 +210,6 @@ export default function ObjectivesSection() {
           <div className="divider-gold mx-auto" />
         </div>
 
-        {/* General objective */}
-        <div className="section-gradient-2 rounded-3xl p-10 mb-16">
-          <span className="section-label section-label-dark">الهدف العام</span>
-          <p className="text-white/90 text-lg leading-relaxed max-w-4xl mt-4 font-medium">
-            إنشاء منصة وطنية ذكية للإيواء والسياحة تعتمد على التحول الرقمي
-            والذكاء الاصطناعي، لربط جميع الفاعلين في القطاع داخل منظومة رقمية
-            موحدة، بهدف تحسين جودة الخدمات، دعم اتخاذ القرار، تشجيع الاستثمار،
-            وتعزيز تنافسية الوجهة السياحية الجزائرية.
-          </p>
-        </div>
-
         {/* Strategic objectives grid */}
         <div className="mb-16">
           <div className="mb-10">
