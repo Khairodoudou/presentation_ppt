@@ -265,35 +265,6 @@ export default function ObjectivesSection() {
           </div>
         </div>
 
-        {/* Tourist features */}
-        <div className="card-premium rounded-3xl p-8 mb-16">
-          <div className="mb-6">
-            <span className="section-label">تحسين تجربة السائح</span>
-            <h3 className="text-xl font-bold text-[#0a1628] mt-2">
-              تجربة رقمية حديثة ومتكاملة
-            </h3>
-            <div className="divider-gold mt-2" />
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {touristFeatures.map((f, i) => (
-              <div
-                key={i}
-                className="flex flex-col gap-2 p-4 rounded-xl bg-teal-50/60 hover:bg-teal-100/60 transition-colors border border-teal-100/50"
-              >
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 rounded-full bg-teal-500 flex-shrink-0" />
-                  <span className="text-[#0a1628] text-sm font-bold">{f.title}</span>
-                </div>
-                <p className="text-gray-600 text-xs leading-relaxed ms-4">
-                  {f.desc}
-                </p>
-              </div>
-            ))}
-          </div>
-          <p className="text-teal-700 font-semibold text-sm mt-4 pt-4 border-t border-gray-100">
-            النتيجة: زيادة رضا السائح
-          </p>
-        </div>
 
         {/* AI & Data */}
         <div className="mb-16">
