@@ -5,10 +5,9 @@ import { Menu, X } from "lucide-react";
 
 const navLinks = [
   { href: "#hero", label: "الرئيسية" },
-  { href: "#problematic", label: "الاشكالية" },
-  { href: "#objectives", label: "الاهداف" },
+  { href: "#problematic", label: "الإشكالية" },
+  { href: "#objectives", label: "الأهداف" },
   { href: "#value", label: "القيمة المضافة" },
-  { href: "#feasibility", label: "قابلية التنفيذ" },
   { href: "#results", label: "النتائج" },
 ];
 

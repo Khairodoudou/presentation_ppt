@@ -129,8 +129,8 @@ export default function HeroSection() {
                 <div className="text-white/70 text-xs">ولاية</div>
               </div>
               <div className="absolute left-0 top-1/2 -translate-y-1/2 glass rounded-2xl px-4 py-2 text-center">
-                <div className="text-[#c9a227] font-black text-xl">2030</div>
-                <div className="text-white/70 text-xs">SDAT</div>
+                <div className="text-[#c9a227] font-black text-xl">100%</div>
+                <div className="text-white/70 text-xs">رقمي وموحّد</div>
               </div>
 
               {/* Ring decorations */}

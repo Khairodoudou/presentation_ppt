@@ -1,10 +1,12 @@
 "use client";
 
+import Image from "next/image";
+
 const strategicObjectives = [
   {
     id: "01",
     title: "رقمنة قطاع الإيواء والسياحة",
-    goal: "الانتقال من التسيير التقليدي إلى منظومة رقمية متكاملة",
+    goal: "الانتقال من التسيير التقليدي واليدوي إلى منظومة رقمية متكاملة وسلسة.",
     color: "from-blue-600 to-blue-800",
     iconBg: "bg-blue-100",
     icon: (
@@ -17,7 +19,7 @@ const strategicObjectives = [
   {
     id: "02",
     title: "إنشاء منصة وطنية موحدة",
-    goal: "جمع جميع الفاعلين داخل منصة واحدة",
+    goal: "ربط كافة الفاعلين في القطاع ضمن قاعدة بيانات واحدة وتنسيق مشترك.",
     color: "from-[#1a3a6b] to-[#0a2040]",
     iconBg: "bg-blue-50",
     icon: (
@@ -32,7 +34,7 @@ const strategicObjectives = [
   {
     id: "03",
     title: "تحسين تجربة السائح",
-    goal: "تقديم تجربة رقمية حديثة ومتكاملة للسائح",
+    goal: "حجز موثوق، مسارات وتوصيات مخصصة، وخدمات رقمية تسهل حركة السائح.",
     color: "from-teal-600 to-teal-800",
     iconBg: "bg-teal-50",
     icon: (
@@ -45,8 +47,8 @@ const strategicObjectives = [
   },
   {
     id: "04",
-    title: "الذكاء الاصطناعي والبيانات",
-    goal: "تحويل البيانات إلى معلومات وقرارات ذكية",
+    title: "توظيف البيانات والذكاء الاصطناعي",
+    goal: "تحويل البيانات الميدانية إلى مؤشرات دقيقة لدعم الاستثمار والقرار التنموي.",
     color: "from-purple-600 to-purple-800",
     iconBg: "bg-purple-50",
     icon: (
@@ -58,71 +60,23 @@ const strategicObjectives = [
   },
 ];
 
-const platformActors = [
-  { label: "الفنادق", icon: "🏨" },
-  { label: "دور الإيواء", icon: "🏡" },
-  { label: "المرشدون", icon: "🧭" },
-  { label: "وكالات السفر", icon: "✈️" },
-  { label: "النقل", icon: "🚌" },
-  { label: "المطاعم", icon: "🍽️" },
-  { label: "وزارة السياحة", icon: "🏛️" },
-  { label: "المستثمرون", icon: "🏦" },
-  { label: "السياح", icon: "👤" },
-];
-
-const touristFeatures = [
-  { title: "الحجز الإلكتروني", desc: "حجز سريع وموثوق للفنادق والخدمات من مكان واحد." },
-  { title: "الخريطة الذكية", desc: "خريطة تفاعلية تظهر المعالم، الفنادق، والمسارات بدقة." },
-  { title: "اقتراح الفنادق", desc: "ترشيحات ذكية مبنية على ميزانية واهتمامات السائح." },
-  { title: "اقتراح الرحلات", desc: "مسارات وبرامج سياحية مصممة خصيصاً لتناسب تفضيلاتك." },
-  { title: "الدفع الإلكتروني", desc: "طرق دفع آمنة ومتنوعة لتسهيل المعاملات المالية." },
-  { title: "دليل سياحي ذكي", desc: "معلومات شاملة ومحدثة عن كل المعالم والوجهات." },
-  { title: "دعم عدة لغات", desc: "واجهة متعددة اللغات لخدمة السياح المحليين والدوليين." },
-  { title: "اقتراح الأنشطة", desc: "أفكار للأنشطة والفعاليات المتاحة خلال فترة إقامتك." },
-];
-
 const dataTypes = [
-  "الحجوزات",
-  "نسب الإشغال",
-  "مدة الإقامة",
-  "الجنسيات",
-  "الوجهات الأكثر زيارة",
-  "المواسم",
-  "تقييمات السياح",
-  "الخدمات الأكثر طلبًا",
+  "الحجوزات والإشغال",
+  "متوسط مدة الإقامة",
+  "توزيع السياح والجنسيات",
+  "المواسم والذروة",
+  "الوجهات الأكثر طلباً",
+  "تقييمات الخدمات",
+  "فرص العرض والطلب",
+  "مؤشرات الاستثمار المحلي",
 ];
 
 const aiFeatures = [
   {
-    title: "AI Tourism Investment Advisor",
-    subtitle: "مستشار الاستثمار الذكي",
-    desc: "يحلل المؤشرات الجغرافية والاقتصادية ويقدم توصيات استثمارية مدروسة.",
-    example: "ولاية جانت: سياح كثر + فنادق قليلة + إشغال مرتفع  ← فرصة استثمارية واعدة",
-    color: "from-amber-600 to-amber-800",
-    icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="white" strokeWidth="2" strokeLinecap="round"/>
-      </svg>
-    ),
-  },
-  {
-    title: "Smart Investment Map",
-    subtitle: "خريطة الاستثمار الذكية",
-    desc: "خريطة تفاعلية تصنف مناطق الجزائر حسب الفرص الاستثمارية بالألوان.",
-    example: "أخضر: فرص مرتفعة  |  أصفر: فرص متوسطة  |  أحمر: مناطق مشبعة",
-    color: "from-green-600 to-green-800",
-    icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-        <circle cx="12" cy="12" r="10" stroke="white" strokeWidth="2"/>
-        <path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20" stroke="white" strokeWidth="2" strokeLinecap="round"/>
-      </svg>
-    ),
-  },
-  {
     title: "National Tourism Observatory",
     subtitle: "مرصد السياحة الوطني",
-    desc: "لوحة مؤشرات فورية معتمدة على بيانات حقيقية بدلاً من انتظار التقارير.",
-    example: "متابعة الحجوزات + الإشغال + توزيع السياح + متوسط مدة الإقامة",
+    desc: "لوحة مؤشرات فورية معتمدة على بيانات حقيقية بدلاً من التقارير الورقية المتأخرة.",
+    example: "متابعة الحجوزات ونسب الإشغال والتدفقات السياحية عبر كافة الولايات لحظياً.",
     color: "from-blue-600 to-blue-800",
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
@@ -132,23 +86,22 @@ const aiFeatures = [
     ),
   },
   {
-    title: "AI Hotel Recommendation",
-    subtitle: "توصية الفنادق بالذكاء الاصطناعي",
-    desc: "يقترح الفندق الأنسب لكل سائح بناءً على ميزانيته ونوع رحلته وتقييماته.",
-    example: "تحليل: الميزانية + نوع الرحلة + العائلة + الأطفال + الهدوء",
-    color: "from-[#1a3a6b] to-[#0a2040]",
+    title: "AI Tourism Investment Advisor",
+    subtitle: "مستشار وخريطة الاستثمار الذكي",
+    desc: "يحلل الفجوات الفندقية ويصنف المناطق حسب الفرص الاستثمارية لتوجيه رؤوس الأموال.",
+    example: "تحليل مناطق العجز الفندقي مع إقبال سياحي مرتفع لتحديد أولويات الاستثمار.",
+    color: "from-amber-600 to-amber-800",
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-        <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-        <path d="M9 22V12h6v10" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="white" strokeWidth="2" strokeLinecap="round"/>
       </svg>
     ),
   },
   {
-    title: "AI Smart Map",
-    subtitle: "الخريطة الذكية",
-    desc: "تساعد على بناء مسار سياحي ذكي مع اقتراح بدائل وأماكن قريبة.",
-    example: "فنادق بديلة + أماكن سياحية + مطاعم + أنشطة + مسار ذكي",
+    title: "AI Smart Travel Experience",
+    subtitle: "تجربة السائح والجواهر المخفية",
+    desc: "اقتراح فنادق ومسارات ذكية حسب ميزانية السائح مع تسليط الضوء على الوجهات غير المعروفة.",
+    example: "توصيات شخصية + دليل سياحي ذكي + توزيع السياح نحو وجهات بديلة ومناطق ريفية.",
     color: "from-teal-600 to-teal-800",
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
@@ -158,34 +111,10 @@ const aiFeatures = [
     ),
   },
   {
-    title: "AI Hidden Gems",
-    subtitle: "الجواهر المخفية",
-    desc: "يساعد على اكتشاف أماكن غير معروفة وتوزيع الحركة السياحية على كامل التراب.",
-    example: "قرى سياحية + مواقع طبيعية + مسارات جديدة + وجهات بديلة",
-    color: "from-purple-600 to-purple-800",
-    icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-      </svg>
-    ),
-  },
-  {
-    title: "National Digital Tourism Cloud",
-    subtitle: "السحابة الرقمية الوطنية",
-    desc: "بنية سحابية وطنية تسمح لكل مؤسسة بالعمل داخل منظومة موحدة.",
-    example: "عمل موحد + أمن البيانات + صلاحيات محددة لكل جهة",
-    color: "from-sky-600 to-sky-800",
-    icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-        <path d="M18 10h-1.26A8 8 0 109 20h9a5 5 0 000-10z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-      </svg>
-    ),
-  },
-  {
-    title: "AI Emergency SOS",
-    subtitle: "خدمة الطوارئ الذكية",
-    desc: "في حالة الطوارئ، يرسل النظام الموقع الجغرافي للسائح إلى الجهة المختصة فورًا.",
-    example: "السائح يضغط SOS ← إرسال الموقع الجغرافي للجهة المختصة",
+    title: "AI Safety & Emergency SOS",
+    subtitle: "منظومة الأمان والطوارئ الذكية",
+    desc: "ربط رقمي آمن يتيح في حالات الطوارئ تحديد الموقع الجغرافي والإشعار الفوري للجهات المختصة.",
+    example: "زر استغاثة طارئ SOS يرسل الإحداثيات الجغرافية بدقة فائقة إلى المصالح المعنية.",
     color: "from-red-600 to-red-800",
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
@@ -208,6 +137,9 @@ export default function ObjectivesSection() {
             أهداف المشروع
           </h2>
           <div className="divider-gold mx-auto" />
+          <p className="text-gray-600 mt-4 max-w-2xl mx-auto text-base">
+            خطة متكاملة للانتقال بقطاع الإيواء والسياحة نحو التميز الرقمي المستدام
+          </p>
         </div>
 
         {/* Strategic objectives grid */}
@@ -219,7 +151,7 @@ export default function ObjectivesSection() {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {strategicObjectives.map((obj) => (
-              <div key={obj.id} className="card-premium rounded-3xl overflow-hidden">
+              <div key={obj.id} className="card-premium rounded-3xl overflow-hidden hover:-translate-y-1 transition-transform duration-300">
                 <div className={`bg-gradient-to-br ${obj.color} p-6`}>
                   <div className="text-white/40 text-4xl font-black mb-2">{obj.id}</div>
                   <h3 className="text-white font-bold text-base leading-tight">{obj.title}</h3>
@@ -233,76 +165,117 @@ export default function ObjectivesSection() {
           </div>
         </div>
 
-        {/* Platform actors */}
-        <div className="card-premium rounded-3xl p-8 mb-16">
-          <div className="mb-6">
-            <span className="section-label">المنصة الوطنية الموحدة تربط</span>
-            <h3 className="text-xl font-bold text-[#0a1628] mt-2">
-              جميع الفاعلين في منظومة واحدة
+        {/* Unified Ecosystem Architecture Showcase */}
+        <div className="mb-20">
+          <div className="text-center mb-8">
+            <span className="section-label">الهندسة الشاملة للمشروع</span>
+            <h3 className="text-2xl sm:text-3xl font-black text-[#0a1628] mt-3">
+              معمارية المنظومة الموحدة (Unified Ecosystem)
             </h3>
-            <div className="divider-gold mt-2" />
+            <div className="divider-gold mx-auto mt-3" />
+            <p className="text-gray-600 mt-3 max-w-2xl mx-auto text-sm sm:text-base">
+              مخطط تفاعلي يوضح ترابط كافة المتدخلين بالقلب السحابي للمنصة والذكاء الاصطناعي
+            </p>
           </div>
-          <div className="grid grid-cols-3 sm:grid-cols-5 lg:grid-cols-9 gap-4">
-            {platformActors.map((actor, i) => (
-              <div
-                key={i}
-                className="flex flex-col items-center gap-2 p-3 rounded-2xl bg-blue-50/50 hover:bg-blue-100/50 transition-colors"
-              >
-                <span className="text-2xl">{actor.icon}</span>
-                <span className="text-[#0a1628] text-xs font-semibold text-center leading-tight">
-                  {actor.label}
-                </span>
+
+          <div className="card-premium rounded-3xl p-4 sm:p-6 lg:p-8 bg-gradient-to-b from-[#0a1628] via-[#0d1e38] to-[#12233f] text-white shadow-2xl border border-white/10 relative overflow-hidden group">
+            {/* Ambient decorative glow */}
+            <div className="absolute top-0 right-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-[#c9a227]/10 rounded-full blur-3xl pointer-events-none" />
+
+            {/* The Visual Architecture Image */}
+            <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl mb-8 group-hover:border-[#c9a227]/40 transition-colors duration-500">
+              <Image
+                src="/project_overview.jpg"
+                alt="الهندسة الشاملة للمنظومة الوطنية الذكية للإيواء والسياحة"
+                width={1920}
+                height={1080}
+                className="w-full h-auto object-cover transform group-hover:scale-[1.01] transition-transform duration-700"
+                priority
+              />
+            </div>
+
+            {/* 4 Interactive Actor Explanation Cards */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              <div className="glass rounded-2xl p-4 border border-white/10 hover:border-blue-400/40 transition-colors">
+                <div className="flex items-center gap-2 mb-2">
+                  <div className="w-2.5 h-2.5 rounded-full bg-blue-400 flex-shrink-0" />
+                  <h4 className="font-bold text-white text-sm">الفنادق ومؤسسات الإيواء</h4>
+                </div>
+                <p className="text-white/70 text-xs leading-relaxed">
+                  تسيير آلي للغرف، الحجوزات ونسب الإشغال، وإلغاء المعاملات الورقية.
+                </p>
               </div>
-            ))}
-          </div>
-          <div className="grid sm:grid-cols-3 gap-4 mt-6 pt-6 border-t border-gray-100">
-            {["تبادل المعلومات بسهولة", "تقليل تكرار البيانات", "تحسين التنسيق"].map((b, i) => (
-              <div key={i} className="flex items-center gap-2">
-                <div className="w-2 h-2 rounded-full bg-teal-500 flex-shrink-0" />
-                <span className="text-gray-700 text-sm">{b}</span>
+
+              <div className="glass rounded-2xl p-4 border border-white/10 hover:border-teal-400/40 transition-colors">
+                <div className="flex items-center gap-2 mb-2">
+                  <div className="w-2.5 h-2.5 rounded-full bg-teal-400 flex-shrink-0" />
+                  <h4 className="font-bold text-white text-sm">الجهات الأمنية والوزارة</h4>
+                </div>
+                <p className="text-white/70 text-xs leading-relaxed">
+                  قناة مشفرة وآمنة لبيانات النزلاء مع لوحة مؤشرات فورية للقطاع.
+                </p>
               </div>
-            ))}
+
+              <div className="glass rounded-2xl p-4 border border-white/10 hover:border-amber-400/40 transition-colors">
+                <div className="flex items-center gap-2 mb-2">
+                  <div className="w-2.5 h-2.5 rounded-full bg-amber-400 flex-shrink-0" />
+                  <h4 className="font-bold text-white text-sm">المستثمرون وأصحاب المشاريع</h4>
+                </div>
+                <p className="text-white/70 text-xs leading-relaxed">
+                  خريطة استثمارية ذكية ترصد الفجوات والفرص الواعدة لتوجيه رؤوس الأموال.
+                </p>
+              </div>
+
+              <div className="glass rounded-2xl p-4 border border-white/10 hover:border-rose-400/40 transition-colors">
+                <div className="flex items-center gap-2 mb-2">
+                  <div className="w-2.5 h-2.5 rounded-full bg-rose-400 flex-shrink-0" />
+                  <h4 className="font-bold text-white text-sm">السياح والزوار</h4>
+                </div>
+                <p className="text-white/70 text-xs leading-relaxed">
+                  تطبيق ذكي لحجز موثوق، مسارات مخصصة، وزر النجدة الفوري (SOS).
+                </p>
+              </div>
+            </div>
           </div>
         </div>
 
-
         {/* AI & Data */}
-        <div className="mb-16">
-          <div className="section-gradient-2 rounded-3xl p-10 mb-10">
+        <div>
+          <div className="section-gradient-2 rounded-3xl p-8 sm:p-10 mb-10 shadow-xl">
             <span className="section-label section-label-dark">الذكاء الاصطناعي والبيانات</span>
-            <h3 className="text-2xl font-bold text-white mt-4 mb-4">
+            <h3 className="text-2xl sm:text-3xl font-bold text-white mt-4 mb-4">
               البيانات هي الثروة الحقيقية
             </h3>
-            <p className="text-white/80 leading-relaxed mb-6 max-w-3xl">
-              اليوم، الجميع يتحدث عن السياحة، لكن قليلون يتحدثون عن البيانات.
-              مشروعنا لا يهدف فقط إلى رقمنة الخدمات، بل إلى تحويل البيانات
-              إلى معلومات، والمعلومات إلى قرارات.
+            <p className="text-white/80 leading-relaxed mb-6 max-w-3xl text-sm sm:text-base">
+              مشروعنا لا يكتفي برقمنة الخدمات التشغيلية، بل يوظف البيانات المجمعة لتحويلها
+              إلى رؤى استراتيجية وقرارات ذكية تخدم كافة المتدخلين في القطاع.
             </p>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
               {dataTypes.map((d, i) => (
                 <div key={i} className="glass rounded-xl p-3 flex items-center gap-2">
                   <div className="w-1.5 h-1.5 rounded-full bg-[#f0c040] flex-shrink-0" />
-                  <span className="text-white/85 text-sm">{d}</span>
+                  <span className="text-white/85 text-xs sm:text-sm font-medium">{d}</span>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* AI features grid */}
+          {/* AI features grid (4 distinct high-impact pillars) */}
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {aiFeatures.map((f, i) => (
-              <div key={i} className="card-premium rounded-3xl overflow-hidden group">
+              <div key={i} className="card-premium rounded-3xl overflow-hidden group hover:shadow-xl transition-all duration-300">
                 <div className={`bg-gradient-to-br ${f.color} p-5`}>
                   <div className="w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center mb-3">
                     {f.icon}
                   </div>
                   <h4 className="text-white font-bold text-sm leading-tight">{f.subtitle}</h4>
-                  <p className="text-white/60 text-xs mt-1">{f.title}</p>
+                  <p className="text-white/60 text-xs mt-1 font-mono">{f.title}</p>
                 </div>
-                <div className="p-5">
-                  <p className="text-gray-700 text-xs leading-relaxed mb-3">{f.desc}</p>
-                  <div className="bg-gray-50 rounded-xl p-3">
-                    <p className="text-gray-500 text-xs leading-relaxed">{f.example}</p>
+                <div className="p-5 flex flex-col justify-between h-[calc(100%-110px)]">
+                  <p className="text-gray-700 text-xs leading-relaxed mb-4">{f.desc}</p>
+                  <div className="bg-slate-50 border border-slate-100 rounded-xl p-3">
+                    <p className="text-slate-600 text-xs leading-relaxed font-medium">{f.example}</p>
                   </div>
                 </div>
               </div>
